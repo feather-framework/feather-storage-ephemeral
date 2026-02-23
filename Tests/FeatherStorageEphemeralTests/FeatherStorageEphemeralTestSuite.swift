@@ -50,7 +50,7 @@ struct FeatherStorageEphemeralTestSuite {
     }
 
     // MARK: - tests
-    
+
     @Test
     func uploadDownloadRangeAndMetadata() async throws {
         let storage = StorageClientEphemeral()
@@ -162,4 +162,3 @@ struct FeatherStorageEphemeralTestSuite {
         }
     }
 }
-
