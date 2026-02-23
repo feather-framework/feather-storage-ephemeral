@@ -34,7 +34,7 @@ let package = Package(
         .library(name: "FeatherStorageEphemeral", targets: ["FeatherStorageEphemeral"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/feather-framework/feather-storage", exact: "1.0.0-beta.1"),
+        .package(url: "https://github.com/feather-framework/feather-storage", exact: "1.0.0-beta.2"),
         // [docc-plugin-placeholder]
     ],
     targets: [
