@@ -25,7 +25,7 @@ public struct StorageClientEphemeral: StorageClient {
     /// - Parameters:
     ///   - key: The destination object key.
     ///   - sequence: The async byte sequence to store.
-    /// - Throws: ``StorageClientError`` if reading or storing the object fails.
+    /// - Throws: `StorageClientError` if reading or storing the object fails.
     public func upload(
         key: String,
         sequence: StorageSequence
@@ -48,7 +48,7 @@ public struct StorageClientEphemeral: StorageClient {
     ///   - key: The source object key.
     ///   - range: An optional inclusive byte range to return.
     /// - Returns: A storage sequence containing either the full object or the requested range.
-    /// - Throws: ``StorageClientError`` if the key or range is invalid.
+    /// - Throws: `StorageClientError` if the key or range is invalid.
     public func download(
         key: String,
         range: ClosedRange<Int>?
@@ -80,7 +80,7 @@ public struct StorageClientEphemeral: StorageClient {
     ///
     /// - Parameter key: The key to check.
     /// - Returns: `true` if an object or directory exists, otherwise `false`.
-    /// - Throws: ``StorageClientError`` if the existence check fails.
+    /// - Throws: `StorageClientError` if the existence check fails.
     public func exists(
         key: String
     ) async throws(StorageClientError) -> Bool {
@@ -91,7 +91,7 @@ public struct StorageClientEphemeral: StorageClient {
     ///
     /// - Parameter key: The object key.
     /// - Returns: The object size in bytes.
-    /// - Throws: ``StorageClientError`` if retrieving the size fails.
+    /// - Throws: `StorageClientError` if retrieving the size fails.
     public func size(
         key: String
     ) async throws(StorageClientError) -> UInt64 {
@@ -103,7 +103,7 @@ public struct StorageClientEphemeral: StorageClient {
     /// - Parameters:
     ///   - source: The source object key.
     ///   - destination: The destination object key.
-    /// - Throws: ``StorageClientError`` if the source key is invalid.
+    /// - Throws: `StorageClientError` if the source key is invalid.
     public func copy(
         key source: String,
         to destination: String
@@ -115,7 +115,7 @@ public struct StorageClientEphemeral: StorageClient {
     ///
     /// - Parameter key: Optional prefix key to list under.
     /// - Returns: Immediate child names under the prefix.
-    /// - Throws: ``StorageClientError`` if listing fails.
+    /// - Throws: `StorageClientError` if listing fails.
     public func list(
         key: String?
     ) async throws(StorageClientError) -> [String] {
@@ -125,7 +125,7 @@ public struct StorageClientEphemeral: StorageClient {
     /// Deletes an object or directory tree at the given key.
     ///
     /// - Parameter key: The key to delete.
-    /// - Throws: ``StorageClientError`` if deletion fails.
+    /// - Throws: `StorageClientError` if deletion fails.
     public func delete(
         key: String
     ) async throws(StorageClientError) {
@@ -135,7 +135,7 @@ public struct StorageClientEphemeral: StorageClient {
     /// Creates a directory at the given key.
     ///
     /// - Parameter key: The directory key to create.
-    /// - Throws: ``StorageClientError`` if directory creation fails.
+    /// - Throws: `StorageClientError` if directory creation fails.
     public func create(
         key: String
     ) async throws(StorageClientError) {
@@ -146,7 +146,7 @@ public struct StorageClientEphemeral: StorageClient {
     ///
     /// - Parameter key: The destination object key.
     /// - Returns: A new multipart upload identifier.
-    /// - Throws: ``StorageClientError`` if multipart setup fails.
+    /// - Throws: `StorageClientError` if multipart setup fails.
     public func createMultipartId(
         key: String
     ) async throws(StorageClientError) -> String {
@@ -161,7 +161,7 @@ public struct StorageClientEphemeral: StorageClient {
     ///   - number: The 1-based chunk number.
     ///   - sequence: The chunk bytes to upload.
     /// - Returns: Metadata for the stored multipart chunk.
-    /// - Throws: ``StorageClientError`` if the multipart upload, chunk number, or payload is invalid.
+    /// - Throws: `StorageClientError` if the multipart upload, chunk number, or payload is invalid.
     public func upload(
         multipartId: String,
         key: String,
@@ -190,7 +190,7 @@ public struct StorageClientEphemeral: StorageClient {
     /// - Parameters:
     ///   - multipartId: The multipart upload identifier.
     ///   - key: The destination object key.
-    /// - Throws: ``StorageClientError`` if the multipart upload identifier is invalid.
+    /// - Throws: `StorageClientError` if the multipart upload identifier is invalid.
     public func abort(
         multipartId: String,
         key: String
@@ -204,7 +204,7 @@ public struct StorageClientEphemeral: StorageClient {
     ///   - multipartId: The multipart upload identifier.
     ///   - key: The destination object key.
     ///   - chunks: The ordered chunk metadata to assemble.
-    /// - Throws: ``StorageClientError`` if the multipart upload or chunk list is invalid.
+    /// - Throws: `StorageClientError` if the multipart upload or chunk list is invalid.
     public func finish(
         multipartId: String,
         key: String,
