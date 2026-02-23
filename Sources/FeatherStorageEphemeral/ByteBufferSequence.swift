@@ -6,7 +6,7 @@
 
 import NIOCore
 
-/// An async sequence that streams a ``ByteBuffer`` in fixed-size chunks.
+/// An async sequence that streams a `ByteBuffer` in fixed-size chunks.
 public struct ByteBufferSequence: AsyncSequence, Sendable {
     private let buffer: ByteBuffer
     private let chunkSize: Int
@@ -24,7 +24,7 @@ public struct ByteBufferSequence: AsyncSequence, Sendable {
         self.chunkSize = chunkSize
     }
 
-    /// The async iterator for ``ByteBufferSequence``.
+    /// The async iterator for `ByteBufferSequence`.
     public struct AsyncIterator: AsyncIteratorProtocol {
         var buffer: ByteBuffer
         let chunkSize: Int
