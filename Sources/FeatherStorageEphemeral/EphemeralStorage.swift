@@ -1,6 +1,6 @@
 //
 //  EphemeralStorage.swift
-//  feather-storage-emphemeral
+//  feather-storage-ephemeral
 //
 //  Created by Tibor Bödecs on 2023. 01. 16.
 
